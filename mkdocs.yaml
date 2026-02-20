@@ -1,0 +1,48 @@
+site_name: The Mycelium Protocol
+site_description: A fractal social protocol for decentralized coordination and resonance.
+site_author: The Mycelium
+site_url: https://community-chests.github.io/liberty/ # Update this for proper sitemaps
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: green
+    accent: light green
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top # Back to top button for long guides
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Welcome: index.md
+  - 🚀 Start Here: bootstrapping.md
+  - 0. Root Logic: 
+      - "The Design Logic": 0-root/logic.md
+  - 1. The Spore (Self):
+      - "The Handshake": 1-spore/handshake.md
+      - "Sync Guide": 1-spore/guide-spore.md
+  - 2. The Pod (Local):
+      - "Resource Map": 2-pod/template.md
+      - "Vitals Guide": 2-pod/guide-pod.md
+  - 3. The Mycelium (Network):
+      - "Myco Link Pact": 3-mycelium/pact.md
+      - "Resilience Guide": 3-mycelium/guide-mycelium.md
+
+plugins:
+  - search
+  - mkdocs-pdf-export-plugin: # Allows Pods to print the manual for offline use
+      combined: true
+      dest: mycelium-protocol-offline.pdf
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition # Allows "Note" and "Warning" blocks in guides
+  - pymdownx.details # Collapsible blocks for technical details
+  - pymdownx.superfences # Better code block nesting
+  

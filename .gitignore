@@ -1,0 +1,26 @@
+# MkDocs build directory
+site/
+
+# Python virtual environments
+venv/
+env/
+.venv/
+bin/
+lib/
+share/
+pyvenv.cfg
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# PDF export artifacts (if using plugins)
+*.pdf
+
+# Local environment variables
+.env
