@@ -14,7 +14,7 @@ authors = [
 keywords = ["protocol", "decentralized", "mycelium", "social-os"]
 dependencies = [
     "mkdocs-material>=9.0.0",
-    "mkdocs-pdf-export-plugin>=0.6.0",
+    "mkdocs-pdf-export-plugin>=0.5.10",
 ]
 
 [project.urls]
