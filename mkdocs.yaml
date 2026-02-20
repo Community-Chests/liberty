@@ -34,7 +34,7 @@ nav:
 
 plugins:
   - search
-  - mkdocs-pdf-export-plugin: # Allows Pods to print the manual for offline use
+  - pdf-export: # Changed from mkdocs-pdf-export-plugin
       combined: true
       dest: mycelium-protocol-offline.pdf
 

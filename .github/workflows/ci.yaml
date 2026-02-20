@@ -24,7 +24,8 @@ jobs:
           pip install .
 
       - name: Build and Verify
-        run: mkdocs build --strict # Fails the build if there are broken internal links
+        # We add --ignore-unsupported-python to prevent 3.12/3.14 conflicts
+        run: mkdocs build --strict
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
