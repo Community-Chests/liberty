@@ -3,16 +3,16 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mycelium-protocol"
-version = "1.2.0"
+name = "liberty-protocol"
+version = "1.2.1" # Bumped version for the fix
 description = "A fractal social operating system for coordination and resonance."
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [
     { name = "Nathan R", email = "moso.nate.r@gmail.com" }
 ]
-keywords = ["protocol", "decentralized", "mycelium", "social-os"]
 dependencies = [
+    "mkdocs<2.0.0", # Pinning to avoid the breaking 2.0 release
     "mkdocs-material>=9.0.0",
     "mkdocs-pdf-export-plugin>=0.5.10",
 ]
