@@ -36,7 +36,7 @@ plugins:
   - search
   - pdf-export: # Changed from mkdocs-pdf-export-plugin
       combined: true
-      output_path: mycelium-protocol-offline.pdf
+      combined_output_path: mycelium-protocol-offline.pdf
 
 markdown_extensions:
   - tables
