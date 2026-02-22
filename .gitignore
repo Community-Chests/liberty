@@ -3,6 +3,8 @@ dist/
 .astro/
 node_modules/
 docs/protocol-docs.md
+public/mycelium-protocol-offline.pdf
+public/mycelium-protocol-print.pdf
 
 # --- The "Shadow" Content ---
 # These are synced from /docs by the starlight-obsidian plugin. 
