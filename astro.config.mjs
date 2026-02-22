@@ -5,6 +5,7 @@ import starlightObsidian from '@asterismono/starlight-obsidian';
 
 export default defineConfig({
   site: 'https://community-chests.github.io/liberty',
+  base: '/liberty',
   redirects: {
     '/': '/notes/',
   },
