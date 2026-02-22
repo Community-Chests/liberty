@@ -4,10 +4,10 @@ import starlight from '@astrojs/starlight';
 import starlightObsidian from '@asterismono/starlight-obsidian';
 
 export default defineConfig({
-  site: 'https://community-chests.github.io/liberty',
+  site: 'https://community-chests.github.io',
   base: '/liberty',
   redirects: {
-    '/': '/notes/',
+    '/': '/liberty/notes/',
   },
   integrations: [
     starlight({
