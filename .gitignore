@@ -1,26 +1,37 @@
-# MkDocs build directory
-site/
+# --- Build & Runtime ---
+dist/
+.astro/
+node_modules/
+docs/protocol-docs.md
 
-# Python virtual environments
-venv/
-env/
+# --- The "Shadow" Content ---
+# These are synced from /docs by the starlight-obsidian plugin. 
+# Do not edit files here; edit them in /docs instead.
+src/content/docs/*
+!src/content/docs/.keep
+
+# --- Python / MkDocs Quarantine ---
+# Leftovers from the old environment
 .venv/
-bin/
-lib/
-share/
-pyvenv.cfg
-
-# Python cache files
+venv/
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
+site/
+.pytest_cache/
+global_uninstalls.txt
 
-# OS-specific files
+# --- Logs & Environment ---
+.env
+.env.production
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# --- Local Workspace Configuration ---
+# Your personal Obsidian settings
+#.obsidian/
+#.vscode/
+
+# --- OS Specific ---
 .DS_Store
 Thumbs.db
-
-# PDF export artifacts (if using plugins)
-*.pdf
-
-# Local environment variables
-.env

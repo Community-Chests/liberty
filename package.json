@@ -1,0 +1,28 @@
+{
+  "name": "liberty-protocol",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Sovereign mycelial infrastructure for local resilience.",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "npm run pdf && astro dev",
+    "start": "npm run pdf && astro dev",
+    "build": "npm run pdf && astro build && npx pagefind --site dist",
+    "pdf": "node merge-docs.mjs",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@asterismono/starlight-obsidian": "^0.11.2",
+    "@astrojs/starlight": "^0.37.6",
+    "astro": "^5.17.0",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "md-to-pdf": "^5.2.5",
+    "pagefind": "^1.4.0"
+  }
+}

@@ -1,0 +1,79 @@
+/* =========================================
+   1. HIDE AUTO-GENERATED TITLES
+   ========================================= */
+/* Vaporizes the internal filenames (e.g., "guide-pod") globally */
+h1#_top {
+  display: none !important;
+}
+
+
+/* =========================================
+   2. LIGHT MODE (Matches Print PDF)
+   ========================================= */
+:root[data-theme='light'] {
+  /* Green Accents */
+  --sl-color-accent-low: #bbf7d0;    
+  --sl-color-accent: #16a34a;        /* Slightly darker green for light bg */
+  --sl-color-accent-high: #14532d;   
+  
+  /* Slate Backgrounds */
+  --sl-color-bg: #ffffff;            /* Pure white */
+  --sl-color-bg-nav: #f8fafc;        /* Slate 50 */
+  --sl-color-bg-sidebar: #f1f5f9;    /* Slate 100 */
+  
+  /* Text Resonance */
+  --sl-color-text: #334155;          /* Slate 700 body text */
+  --sl-color-white: #0f172a;         /* Headings inverted to Slate 950 */
+}
+
+
+/* =========================================
+   3. DARK MODE (Matches Offline PDF)
+   ========================================= */
+:root[data-theme='dark'] {
+  /* Green Accents */
+  --sl-color-accent-low: #14532d;    
+  --sl-color-accent: #22c55e;        /* Vivid Green */
+  --sl-color-accent-high: #bbf7d0;   
+  
+  /* Slate Backgrounds */
+  --sl-color-bg: #0f172a;            /* Slate 950 */
+  --sl-color-bg-nav: #1e293b;        /* Slate 800 */
+  --sl-color-bg-sidebar: #0f172a;
+  
+  /* Text Resonance */
+  --sl-color-text: #cbd5e1;          /* Slate 300 text */
+  --sl-color-white: #f8fafc;         /* White headings */
+}
+
+
+/* =========================================
+   4. PDF GENERATION LOGIC (Do Not Change)
+   ========================================= */
+@media print {
+  /* Force colors and background */
+  body {
+    background-color: #0f172a !important; 
+    color: #f8fafc !important;
+    -webkit-print-color-adjust: exact !important; 
+    print-color-adjust: exact !important;
+  }
+
+  /* Make sure internal links are visible */
+  a {
+    color: #22c55e !important;
+    text-decoration: underline;
+  }
+
+  /* Force H1/H2 to be Green */
+  h1, h2, h3 {
+    color: #22c55e !important;
+  }
+
+  /* Clean breaks for code */
+  pre {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    page-break-inside: avoid;
+  }
+}

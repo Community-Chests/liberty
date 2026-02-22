@@ -1,3 +1,14 @@
+---
+title: The Mycelium Protocol
+description: A fractal social protocol for decentralized coordination.
+template: splash
+hero:
+  tagline: Decentralized coordination and resonance.
+  actions:
+    - text: Start Here
+      link: /bootstrapping/
+      icon: right-arrow
+---
 # 🍄 Welcome to the Mycelium
 
 The Mycelium is a fractal social operating system built on **Resonance**, not authority. We are replacing the old world of "Might" with a living network of "Right".

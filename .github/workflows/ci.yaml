@@ -1,33 +1,50 @@
-name: Deploy Mycelium Docs
+name: Deploy Liberty Docs
 on:
   push:
     branches:
       - main
+
+# Required permissions for modern GitHub Pages deployments
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.12' # Move from 3.x to a stable, pinned version
-          cache: 'pip'
+          node-version: '24' # Matches your package.json engine
+          cache: 'npm'
 
       - name: Install Dependencies
-        run: |
-          pip install --upgrade pip
-          pip install .
+        run: npm install
 
-      - name: Build and Verify
-        # We add --ignore-unsupported-python to prevent 3.12/3.14 conflicts
-        run: mkdocs build --strict
+      # Puppeteer (used by md-to-pdf) sometimes needs this in CI to run headlessly
+      - name: Install OS Dependencies for PDF Generation
+        run: sudo apt-get update && sudo apt-get install -y libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2
+
+      - name: Build Docs & Generate PDFs
+        run: npm run build
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Astro's output folder
 
       - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: mkdocs gh-deploy --force
+        id: deployment
+        uses: actions/deploy-pages@v4
         
