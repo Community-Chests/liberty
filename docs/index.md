@@ -25,9 +25,9 @@ Our system scales without losing its soul. We grow through three distinct layers
 ## 🚀 Where to Begin?
 If you are ready to establish the first healthy cell of this new organism, your journey starts here:
 
-* **[Start Here: The Bootstrapper’s Manual](bootstrapping.md)**: The 5-phase guide to finding Spores and launching your first Pod.
-* **[Read the Design Logic](0-root/logic.md)**: Understand the "Source Code" of our ethics and immune response.
-* **[Sync your Handshake](1-spore/handshake.md)**: Learn how to broadcast your signal as a peer.
+* **[Start Here: The Bootstrapper’s Manual](./bootstrapping/)**: The 5-phase guide to finding Spores and launching your first Pod.
+* **[Read the Design Logic](./0-root/logic/)**: Understand the "Source Code" of our ethics and immune response.
+* **[Sync your Handshake](./1-spore/handshake/)**: Learn how to broadcast your signal as a peer.
 
 ---
 > "In the light of day, might is visible and therefore easily bypassed. Transparency is our fundamental security protocol."
