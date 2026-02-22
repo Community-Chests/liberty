@@ -123,6 +123,9 @@ ${bodyContents.join('\n\n')}
           margin: '0mm', 
           printBackground: true,
           displayHeaderFooter: false 
+        },
+        launch_options: {
+          args: ['--no-sandbox', '--disable-setuid-sandbox']
         }
       }
     );
@@ -174,6 +177,9 @@ ${bodyContents.join('\n\n')}
           displayHeaderFooter: true,
           headerTemplate: '<div style="width: 100%; text-align: center; font-size: 8px; color: #94a3b8; font-family: sans-serif;">THE LIBERTY PROTOCOL</div>',
           footerTemplate: '<div style="width: 100%; text-align: center; font-size: 10px; color: #64748b; font-family: sans-serif; padding-bottom: 5mm;"><span class="pageNumber"></span> / <span class="totalPages"></span></div>'
+        },
+        launch_options: {
+          args: ['--no-sandbox', '--disable-setuid-sandbox']
         }
       }
     );
